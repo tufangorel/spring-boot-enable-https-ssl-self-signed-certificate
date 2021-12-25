@@ -5,25 +5,36 @@ Reason : Provide secure data transfer between rest api and client.  <br/>
 
 ### Local run steps <br/>
 1- Generate self signed ssl certificate by using JDK keytool. <br/>
-D:\DEV\ssl>keytool -genkeypair -alias custapi -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore custapi.p12 -validity 3650 -storepass password <br/>
-What is your first and last name? <br/>
-[Unknown]: <br/>
-What is the name of your organizational unit? <br/>
-[Unknown]: <br/>
-What is the name of your organization? <br/>
-[Unknown]: <br/>
-What is the name of your City or Locality? <br/>
-[Unknown]: <br/>
-What is the name of your State or Province? <br/>
-[Unknown]: <br/>
-What is the two-letter country code for this unit? <br/>
-[Unknown]: <br/>
-Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct? <br/>
-[no]:  yes <br/>
-
+<pre>
+D:\DEV\ssl>keytool -genkeypair -alias custapi -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore custapi.p12 -validity 3650 -storepass password
+What is your first and last name?
+[Unknown]:
+What is the name of your organizational unit?
+[Unknown]:
+What is the name of your organization?
+[Unknown]:
+What is the name of your City or Locality?
+[Unknown]:
+What is the name of your State or Province?
+[Unknown]:
+What is the two-letter country code for this unit?
+[Unknown]:
+Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
+[no]:  yes
+</pre>
 2- Move generated certificate file into your spring boot application resources directory named with "ssl". <br/>
-3- Start Spring Boot API by running main method containing class CustomerInfoApplication.java in your IDE. <br/>
-4- Alternatively you can start your Docker container by following the commands below. <br/>
+
+3- Add following properties into application.properties file. <br/>
+<pre>
+server.ssl.key-store-type=PKCS12 <br/>
+server.ssl.key-store=classpath:ssl/custapi.p12 <br/>
+server.ssl.key-store-password=password <br/>
+server.ssl.key-alias=custapi <br/>
+server.ssl.enabled=true <br/>
+server.port=8443 <br/>
+</pre>
+4- Start Spring Boot API by running main method containing class CustomerInfoApplication.java in your IDE. <br/>
+5- Alternatively you can start your Docker container by following the commands below. <br/>
 NOT : Execute maven command from where the pom.xml is located in the project directory to create Spring Boot executable jar. <br/>
 <pre> 
 $ mvn clean install -U -X <br/>
