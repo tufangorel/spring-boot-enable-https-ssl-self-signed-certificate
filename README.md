@@ -41,7 +41,7 @@ $ mvn clean install -U -X <br/>
 </pre>
 
 In order to check the https ssl configuration swagger_ui can be accessed via https secure port : <br/>
-https://localhost:8443/customer-info/swagger-ui/index.html <br/>
+https://localhost:8443/customer-info/swagger-ui/index.html <br/><br/>
 ![https_swagger_ui](doc/https_swagger_ui.png) <br/>
 
 ### Tech Stack
