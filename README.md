@@ -70,7 +70,7 @@ $ docker build . --tag demo  <br/>
 $ docker images <br/>
   REPOSITORY   TAG       IMAGE ID       CREATED         SIZE <br/>
   demo         latest    9d4a0ec3294e   6 minutes ago   288MB <br/>
-$ docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=dev" demo:latest <br/>
+$ docker run -p 8443:8443 -e "SPRING_PROFILES_ACTIVE=dev" demo:latest <br/>
 </pre>
 
 ## API OPERATIONS
