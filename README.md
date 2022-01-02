@@ -44,6 +44,9 @@ NOT : Execute maven command from where the pom.xml is located in the project dir
 <pre> 
 $ mvn clean install -U -X <br/>
 </pre>
+<pre>
+$ mvn spring-boot:run -Dspring-boot.run.profiles=dev
+</pre>
 
 In order to check the https ssl configuration swagger_ui can be accessed via https secure port : <br/>
 https://localhost:8443/customer-info/swagger-ui/index.html <br/><br/>
