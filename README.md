@@ -144,8 +144,10 @@ HTTP response code 200 <br/>
 
 Method : HTTP.GET <br/>
 URL : https://localhost:8443/customer-info/customer/list <br/>
-Request Body : <br/>
-{}<br/>
+Request Body : Empty JSON Object <br/>
+<pre>
+{}
+</pre>
 Curl Request : <br/>
 <pre>
 curl --location --request GET 'https://localhost:8443/customer-info/customer/list' \
