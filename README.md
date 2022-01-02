@@ -42,7 +42,7 @@ server.port=8443 <br/>
 5- Alternatively you can start your Docker container by following the commands below. <br/>
 NOT : Execute maven command from where the pom.xml is located in the project directory to create Spring Boot executable jar. <br/>
 <pre> 
-$ mvn clean install -U -X <br/>
+$ mvn clean install -U -X
 </pre>
 <pre>
 $ mvn spring-boot:run -Dspring-boot.run.profiles=dev
