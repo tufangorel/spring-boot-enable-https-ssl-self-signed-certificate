@@ -31,7 +31,7 @@ D:\DEV\ssl>keytool -export -alias custapi -keystore serverkeystore -storepass pa
 3- Add following properties into application.properties file. <br/>
 <pre>
 server.ssl.key-store-type=PKCS12 <br/>
-server.ssl.key-store=classpath:ssl/custapi.p12 <br/>
+server.ssl.key-store=classpath:ssl/serverkeystore <br/>
 server.ssl.key-store-password=password <br/>
 server.ssl.key-alias=custapi <br/>
 server.ssl.enabled=true <br/>
