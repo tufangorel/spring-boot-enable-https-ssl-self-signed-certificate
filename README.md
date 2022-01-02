@@ -25,7 +25,7 @@ Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 1.1- Export public key from keystore. <br/>
 <pre>
 D:\DEV\ssl>keytool -export -alias custapi -keystore serverkeystore -storepass password -rfc -file custapi.crt
-Certificate stored in file "<custapi.crt>"
+Certificate stored in file "custapi.crt"
 </pre>
 2- Move generated certificate file into your spring boot application resources directory named with "ssl". <br/>
 
