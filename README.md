@@ -6,7 +6,7 @@ Reason : Provide secure data transfer between rest api and client.  <br/>
 ### Local run steps <br/>
 1- Generate self signed ssl certificate by using JDK keytool. <br/>
 <pre>
-D:\DEV\ssl>keytool -genkeypair -alias custapi -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore custapi.p12 -validity 3650 -storepass password
+D:\DEV\ssl>keytool -genkeypair -keypass password -storepass password -keystore serverkeystore -alias custapi -keyalg RSA -validity 365
 What is your first and last name?
 [Unknown]:
 What is the name of your organizational unit?
@@ -22,6 +22,8 @@ What is the two-letter country code for this unit?
 Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 [no]:  yes
 </pre>
+1.1- Export public key from keystore. <br/>
+keytool -export -alias custapi -keystore serverkeystore -storepass password -rfc -file custapi.crt <br/>
 2- Move generated certificate file into your spring boot application resources directory named with "ssl". <br/>
 
 3- Add following properties into application.properties file. <br/>
@@ -63,7 +65,7 @@ Docker <br/>
 
 ### Docker build run steps
 NOT : Execute docker commands from where the DockerFile is located. <br/>
-NOT : Tested on Windows 10 with Docker Desktop Engine Version : 20.10.8 <br/>
+NOT : Tested on Windows 10 with Docker Desktop Engine Version : 20.10.11 <br/>
 <pre>
 $ docker system prune -a --volumes <br/>
 $ docker build . --tag demo  <br/>
