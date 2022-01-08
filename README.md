@@ -22,7 +22,7 @@ What is the two-letter country code for this unit?
 Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
 [no]:  yes
 </pre>
-1.1- Export public key from keystore. <br/>
+1.1- Export self signed public key certificate from keystore. <br/>
 <pre>
 D:\DEV\ssl>keytool -export -alias custapi -keystore serverkeystore -storepass password -rfc -file custapi.crt
 Certificate stored in file "custapi.crt"
